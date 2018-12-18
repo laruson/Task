@@ -17,7 +17,7 @@ abstract class UserDatabase : RoomDatabase() {
     companion object {
         fun getInstance(context: Context): UserDatabase {
             return Room
-                .databaseBuilder(context, UserDatabase::class.java, "Asd")
+                .databaseBuilder(context, UserDatabase::class.java, DATABASE_NAME)
                 .allowMainThreadQueries()
                 .fallbackToDestructiveMigration()
                 .build()

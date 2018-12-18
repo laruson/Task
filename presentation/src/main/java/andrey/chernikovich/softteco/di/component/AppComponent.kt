@@ -4,6 +4,7 @@ import andrey.chernikovich.softteco.app.App
 import andrey.chernikovich.softteco.di.moduls.AppModule
 import andrey.chernikovich.softteco.di.moduls.data.DaoModule
 import andrey.chernikovich.softteco.di.moduls.data.DataModule
+import andrey.chernikovich.softteco.di.moduls.data.FileModule
 import andrey.chernikovich.softteco.di.moduls.data.RestServiceModule
 import andrey.chernikovich.softteco.di.moduls.repository.RepositoryModule
 import andrey.chernikovich.softteco.presentation.screen.main.MainViewModel
@@ -15,6 +16,7 @@ import javax.inject.Singleton
 @Component(
     modules = [DaoModule::class,
         DataModule::class,
+        FileModule::class,
         RestServiceModule::class,
         RepositoryModule::class,
         AppModule::class]

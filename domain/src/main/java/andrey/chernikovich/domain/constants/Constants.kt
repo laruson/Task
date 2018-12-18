@@ -11,3 +11,6 @@ const val JSON_URL = "JSON_URL"
 const val URL = "http://jsonplaceholder.typicode.com"
 
 const val DATABASE_NAME="usersDatabase"
+
+const val FILE_NAME="FILE_NAME"
+const val LOG_FILE_NAME="logs.txt"

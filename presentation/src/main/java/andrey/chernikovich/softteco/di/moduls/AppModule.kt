@@ -19,4 +19,10 @@ class AppModule(private val app: App) {
     fun providePostExecutorThread(): PostExecutorThread {
         return UIThread()
     }
+
+    @Provides
+    @Singleton
+    fun provideProcess():Process{
+        return Runtime.getRuntime().exec("logcat -d")
+    }
 }
