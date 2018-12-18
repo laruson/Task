@@ -1,6 +1,7 @@
 package andrey.chernikovich.softteco.app
 
 import andrey.chernikovich.softteco.di.component.AppComponent
+import andrey.chernikovich.softteco.di.component.DaggerAppComponent
 import andrey.chernikovich.softteco.di.moduls.AppModule
 import android.app.Application
 

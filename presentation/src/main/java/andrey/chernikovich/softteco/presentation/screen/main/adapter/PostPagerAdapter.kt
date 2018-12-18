@@ -1,17 +1,14 @@
-package andrey.chernikovich.softteco.presentation.screen.first.adapter
+package andrey.chernikovich.softteco.presentation.screen.main.adapter
 
 import andrey.chernikovich.domain.entity.Post
 import andrey.chernikovich.softteco.BR
 import andrey.chernikovich.softteco.app.App
 import andrey.chernikovich.softteco.databinding.ItemTwoLineBinding
 import andrey.chernikovich.softteco.presentation.base.pager.BasePagerAdapter
-import andrey.chernikovich.softteco.presentation.screen.second.SecondActivity
-import andrey.chernikovich.softteco.presentation.utils.EXTRA_POST_ID
-import andrey.chernikovich.softteco.presentation.utils.EXTRA_USER_ID
+import andrey.chernikovich.softteco.presentation.base.pager.ItemClick
 import andrey.chernikovich.softteco.presentation.utils.cretePostsList
 import andrey.chernikovich.softteco.presentation.utils.custom.DoubleTextView
 import andrey.chernikovich.softteco.presentation.utils.postsInPositionList
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,21 +36,21 @@ class PostPagerAdapter : BasePagerAdapter<Post,
 
         for (i in 0 until pagePost.size) {
             when (i) {
-                0 -> setViewContent(binding.postOne, pagePost[i])
-                1 -> setViewContent(binding.postTwo, pagePost[i])
-                2 -> setViewContent(binding.postThree, pagePost[i])
-                3 -> setViewContent(binding.postFour, pagePost[i])
-                4 -> setViewContent(binding.postFive, pagePost[i])
-                5 -> setViewContent(binding.postSix, pagePost[i])
+                0 -> setViewContent(binding.postOne, pagePost[i], position)
+                1 -> setViewContent(binding.postTwo, pagePost[i], position)
+                2 -> setViewContent(binding.postThree, pagePost[i], position)
+                3 -> setViewContent(binding.postFour, pagePost[i], position)
+                4 -> setViewContent(binding.postFive, pagePost[i], position)
+                5 -> setViewContent(binding.postSix, pagePost[i], position)
             }
         }
         viewGroup.addView(binding.root)
         return binding.root
     }
 
-    private fun setViewContent(doubleTextView: DoubleTextView, post: Post) {
+    private fun setViewContent(doubleTextView: DoubleTextView, post: Post, position: Int) {
         setText(doubleTextView, post)
-        setClick(doubleTextView, post)
+        setClick(doubleTextView, post, position)
     }
 
     private fun setText(doubleTextView: DoubleTextView, post: Post) {
@@ -62,12 +59,9 @@ class PostPagerAdapter : BasePagerAdapter<Post,
         doubleTextView.visibility = View.VISIBLE
     }
 
-    private fun setClick(doubleTextView: DoubleTextView, post: Post) {
-        val intent = Intent(App.instance, SecondActivity::class.java)
+    private fun setClick(doubleTextView: DoubleTextView, post: Post, position: Int) {
         doubleTextView.setOnClickListener {
-            intent.putExtra(EXTRA_USER_ID, post.userId)
-            intent.putExtra(EXTRA_POST_ID, post.id)
-            App.instance.startActivity((intent))
+            clickItemSubject.onNext(ItemClick(post, position))
         }
     }
 

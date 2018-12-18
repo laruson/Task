@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SoftTeco</string>
+    <string name="save_user">Save user</string>
 </resources>

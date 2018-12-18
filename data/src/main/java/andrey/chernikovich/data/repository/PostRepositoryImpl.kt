@@ -13,7 +13,6 @@ class PostRepositoryImpl(private val restService: RestService) : PostRepository 
         return restService.getPosts()
             .map { posts ->
             posts.map {
-                Log.e("AAA", it.toString())
                 it.transformToPost()
             }
         }

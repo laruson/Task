@@ -1,21 +1,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="andrey.chernikovich.softteco">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application android:allowBackup="true"
                  android:name=".app.App"
-                 android:label=""
+                 android:label="soft"
                  android:icon="@mipmap/ic_launcher"
                  android:roundIcon="@mipmap/ic_launcher_round"
                  android:supportsRtl="true"
                  android:theme="@style/AppTheme">
 
-        <activity android:name=".presentation.screen.first.FirstActivity">
+        <activity android:name=".presentation.screen.main.MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER"/>
-                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
+        </activity>
+
+        <activity android:name=".presentation.screen.contact.ContactActivity"
+                  android:theme="@style/ActionBarTheme">>
         </activity>
 
     </application>

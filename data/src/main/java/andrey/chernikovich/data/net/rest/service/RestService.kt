@@ -1,6 +1,7 @@
 package andrey.chernikovich.data.net.rest.service
 
 import andrey.chernikovich.data.net.entity.PostResponse
+import andrey.chernikovich.data.net.entity.user.UserResponse
 import andrey.chernikovich.data.net.rest.api.RestApiPost
 import com.google.gson.GsonBuilder
 import io.reactivex.Observable
@@ -37,5 +38,9 @@ class RestService (apiUrl:String){
 
     fun getPosts():Observable<List<PostResponse>>{
         return restApi.getPosts()
+    }
+
+    fun getUser(id:Int):Observable<UserResponse>{
+        return restApi.getUser(id)
     }
 }

@@ -2,4 +2,12 @@
 <resources>
     <dimen name="baseIndent">8dp</dimen>
     <dimen name="zero">0dp</dimen>
+    <dimen name="indentF">40dp</dimen>
+    <dimen name="infoTextSize">20sp</dimen>
+    <dimen name="indentOF">15dp</dimen>
+    <dimen name="baseTextSize">14sp</dimen>
+    <dimen name="bigTextSize">50sp</dimen>
+    <dimen name="customWidth">90dp</dimen>
+    <dimen name="customHeight">70dp</dimen>
+    <dimen name="buttonMargin">30dp</dimen>
 </resources>

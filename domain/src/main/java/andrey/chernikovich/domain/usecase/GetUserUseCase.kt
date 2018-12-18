@@ -1,18 +1,20 @@
 package andrey.chernikovich.domain.usecase
 
-import andrey.chernikovich.domain.entity.Post
+import andrey.chernikovich.domain.entity.user.User
 import andrey.chernikovich.domain.executor.PostExecutorThread
-import andrey.chernikovich.domain.repository.PostRepository
+import andrey.chernikovich.domain.repository.UserRepository
 import io.reactivex.Observable
 import javax.inject.Inject
 
-class GetPostUseCase @Inject constructor(
+class GetUserUseCase @Inject constructor(
     postExecutorThread: PostExecutorThread,
-    private val postRepository: PostRepository
+    private val userRepository: UserRepository
 ) : BaseUseCase(postExecutorThread) {
-    fun getPosts(): Observable<List<Post>> {
-        return postRepository.getPost()
+
+    fun getUser(id: Int): Observable<User> {
+        return userRepository.getUser(id)
             .observeOn(postExecutorThread)
             .subscribeOn(workExecutorThread)
     }
+
 }

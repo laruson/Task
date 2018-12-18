@@ -6,7 +6,7 @@
 
         <variable
                 name="viewModel"
-                type="andrey.chernikovich.softteco.presentation.screen.first.FirstViewModel"/>
+                type="andrey.chernikovich.softteco.presentation.screen.main.MainViewModel"/>
 
     </data>
     <android.support.constraint.ConstraintLayout
