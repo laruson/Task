@@ -1,5 +1,6 @@
 package andrey.chernikovich.softteco.di.moduls
 
+import andrey.chernikovich.domain.constants.LOGCAT_COMMAND
 import andrey.chernikovich.domain.executor.PostExecutorThread
 import andrey.chernikovich.softteco.app.App
 import andrey.chernikovich.softteco.executer.UIThread
@@ -21,8 +22,7 @@ class AppModule(private val app: App) {
     }
 
     @Provides
-    @Singleton
-    fun provideProcess():Process{
-        return Runtime.getRuntime().exec("logcat -d")
+    fun provideProcess(): Process {
+        return Runtime.getRuntime().exec(LOGCAT_COMMAND)
     }
 }

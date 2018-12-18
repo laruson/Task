@@ -14,13 +14,11 @@ import javax.inject.Singleton
 class FileModule {
 
     @Provides
-    @Singleton
     fun provideReader(process: Process): Reader {
         return Reader(process.inputStream)
     }
 
     @Provides
-    @Singleton
     fun provideWriter(context: Context, @Named(FILE_NAME) fileName: String): Writer {
         return Writer(context, fileName)
     }
