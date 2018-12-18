@@ -1,6 +1,6 @@
 package andrey.chernikovich.softteco.presentation.base.pager
 
-import andrey.chernikovich.softteco.presentation.utils.POSTS_LIMIT_PER_PAGE
+import andrey.chernikovich.domain.constants.POSTS_LIMIT_PER_PAGE
 import android.databinding.ViewDataBinding
 import android.support.v4.view.PagerAdapter
 import android.view.View

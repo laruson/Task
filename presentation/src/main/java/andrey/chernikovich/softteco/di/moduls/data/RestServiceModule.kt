@@ -1,8 +1,8 @@
 package andrey.chernikovich.softteco.di.moduls.data
 
 import andrey.chernikovich.data.net.rest.service.RestService
-import andrey.chernikovich.softteco.presentation.utils.JSON_URL
-import andrey.chernikovich.softteco.presentation.utils.URL
+import andrey.chernikovich.domain.constants.JSON_URL
+import andrey.chernikovich.domain.constants.URL
 import dagger.Module
 import dagger.Provides
 import javax.inject.Named

@@ -1,5 +1,6 @@
 package andrey.chernikovich.softteco.presentation.utils
 
+import andrey.chernikovich.domain.constants.POSTS_LIMIT_PER_PAGE
 import andrey.chernikovich.domain.entity.Post
 
 val postsInPositionList = mutableListOf<List<Post>>()

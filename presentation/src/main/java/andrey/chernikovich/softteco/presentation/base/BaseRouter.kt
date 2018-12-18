@@ -5,17 +5,29 @@ import android.support.v4.app.FragmentManager
 import android.widget.Toast
 
 abstract class BaseRouter<A : Activity>(val activity: A) {
-    fun  showError(e: Throwable) {
-        Toast.makeText(activity,
+    fun showError(e: Throwable) {
+        Toast.makeText(
+            activity,
             "Error $e",
-            Toast.LENGTH_LONG).show()
+            Toast.LENGTH_LONG
+        ).show()
     }
 
-    fun replaceFragment(currentFragment: BaseFragment,
-                        fragmentManager: FragmentManager,
-                        fragment: BaseFragment,
-                        containerResId: Int,
-                        addToBackStack: Boolean = false) {
+    fun showMessage(message: String) {
+        Toast.makeText(
+            activity,
+            message,
+            Toast.LENGTH_LONG
+        ).show()
+    }
+
+    fun replaceFragment(
+        currentFragment: BaseFragment,
+        fragmentManager: FragmentManager,
+        fragment: BaseFragment,
+        containerResId: Int,
+        addToBackStack: Boolean = false
+    ) {
         val fragmentTransient = fragmentManager.beginTransaction()
 
         fragmentTransient.hide(currentFragment).replace(containerResId, fragment, fragment::class.java.canonicalName)

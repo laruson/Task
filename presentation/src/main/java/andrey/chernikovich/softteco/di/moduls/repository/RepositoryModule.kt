@@ -1,5 +1,6 @@
 package andrey.chernikovich.softteco.di.moduls.repository
 
+import andrey.chernikovich.data.db.dao.UserDao
 import andrey.chernikovich.data.net.rest.service.RestService
 import andrey.chernikovich.data.repository.PostRepositoryImpl
 import andrey.chernikovich.data.repository.UserRepositoryImpl
@@ -17,7 +18,7 @@ class RepositoryModule {
     }
 
     @Provides
-    fun provideUserRepository(restService: RestService):UserRepository{
-        return UserRepositoryImpl(restService)
+    fun provideUserRepository(restService: RestService, userDao: UserDao):UserRepository{
+        return UserRepositoryImpl(restService, userDao)
     }
 }

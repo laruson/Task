@@ -3,8 +3,8 @@ package andrey.chernikovich.softteco.presentation.screen.contact
 import andrey.chernikovich.softteco.R
 import andrey.chernikovich.softteco.databinding.ActivityContactBinding
 import andrey.chernikovich.softteco.presentation.base.BaseMvvmActivity
-import andrey.chernikovich.softteco.presentation.utils.EXTRA_POST_ID
-import andrey.chernikovich.softteco.presentation.utils.EXTRA_USER_ID
+import andrey.chernikovich.domain.constants.EXTRA_POST_ID
+import andrey.chernikovich.domain.constants.EXTRA_USER_ID
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.net.Uri

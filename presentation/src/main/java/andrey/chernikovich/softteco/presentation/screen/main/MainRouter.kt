@@ -2,8 +2,8 @@ package andrey.chernikovich.softteco.presentation.screen.main
 
 import andrey.chernikovich.softteco.presentation.base.BaseRouter
 import andrey.chernikovich.softteco.presentation.screen.contact.ContactActivity
-import andrey.chernikovich.softteco.presentation.utils.EXTRA_POST_ID
-import andrey.chernikovich.softteco.presentation.utils.EXTRA_USER_ID
+import andrey.chernikovich.domain.constants.EXTRA_POST_ID
+import andrey.chernikovich.domain.constants.EXTRA_USER_ID
 import android.content.Intent
 
 class MainRouter(activity: MainActivity) : BaseRouter<MainActivity>(activity) {

@@ -4,12 +4,18 @@ import andrey.chernikovich.domain.entity.user.Geo
 import andrey.chernikovich.domain.usecase.GetUserUseCase
 import andrey.chernikovich.softteco.app.App
 import andrey.chernikovich.softteco.presentation.base.BaseViewModel
-import andrey.chernikovich.softteco.presentation.utils.EMPTY
+import andrey.chernikovich.domain.constants.EMPTY
+import andrey.chernikovich.domain.entity.user.User
+import andrey.chernikovich.domain.usecase.SaveUserUseCase
 import android.databinding.ObservableField
 import android.databinding.ObservableInt
+import android.view.View
 import javax.inject.Inject
 
 class ContactViewModel : BaseViewModel<ContactRouter>() {
+
+    private lateinit var user: User
+
     val post = ObservableInt()
     val geo = ObservableField<Geo>()
     val name = ObservableField<String>(EMPTY)
@@ -22,6 +28,9 @@ class ContactViewModel : BaseViewModel<ContactRouter>() {
     @Inject
     lateinit var getUser: GetUserUseCase
 
+    @Inject
+    lateinit var saveUser: SaveUserUseCase
+
     init {
         App.appComponent.inject(this)
     }
@@ -29,6 +38,7 @@ class ContactViewModel : BaseViewModel<ContactRouter>() {
     fun setUser(userId: Int) {
         addToDisposable(getUser.getUser(userId).subscribe(
             {
+                user = it
                 name.set(it.name)
                 nickName.set(it.username)
                 email.set(it.email)
@@ -43,7 +53,9 @@ class ContactViewModel : BaseViewModel<ContactRouter>() {
         ))
     }
 
-    fun saveUser(){
-        
+    fun saveUser(view: View) {
+        saveUser.saveUser(user)
+        router?.showMessage("User saved")
+        router?.showFirstActivity()
     }
 }
