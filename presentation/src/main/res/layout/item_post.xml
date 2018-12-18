@@ -1,0 +1,26 @@
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_margin="@dimen/baseIndent"
+        android:background="@color/post_bacground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+            android:id="@+id/textViewId"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/zero"
+            app:layout_constraintHeight_percent=".5"/>
+
+    <TextView
+            android:id="@+id/textViewTitle"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:layout_height="@dimen/zero"
+            android:textAlignment="center"
+            app:layout_constraintHeight_percent=".5"
+            app:layout_constraintTop_toBottomOf="@+id/textViewId"/>
+</android.support.constraint.ConstraintLayout>

@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
 
+apply plugin: 'kotlin-android'
+
 android {
     compileSdkVersion rootProject.compileSdkVersion
 
@@ -18,5 +20,12 @@ android {
 }
 
 dependencies {
+    def rx = "2.2.0"
 
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    api "io.reactivex.rxjava2:rxjava:$rx"
+    api "io.reactivex.rxjava2:rxkotlin:$rx"
+
+    implementation "javax.inject:javax.inject:1"
 }

@@ -1,0 +1,72 @@
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="viewModel"
+                type="andrey.chernikovich.softteco.presentation.screen.first.adapter.PostViewModel"/>
+
+    </data>
+    <android.support.constraint.ConstraintLayout
+            android:layout_margin="@dimen/baseIndent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <andrey.chernikovich.softteco.presentation.utils.custom.DoubleTextView
+                android:id="@+id/postOne"
+                android:layout_width="@dimen/zero"
+                android:layout_height="@dimen/zero"
+                app:layout_constraintHeight_percent=".5"
+                app:layout_constraintWidth_percent=".33333"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        <andrey.chernikovich.softteco.presentation.utils.custom.DoubleTextView
+                android:id="@+id/postTwo"
+                android:layout_width="@dimen/zero"
+                android:layout_height="@dimen/zero"
+                app:layout_constraintHeight_percent=".5"
+                app:layout_constraintWidth_percent=".33333"
+                app:layout_constraintTop_toTopOf="@+id/postOne"
+                app:layout_constraintStart_toEndOf="@id/postOne"/>
+
+        <andrey.chernikovich.softteco.presentation.utils.custom.DoubleTextView
+                android:id="@+id/postThree"
+                android:layout_width="@dimen/zero"
+                android:layout_height="@dimen/zero"
+                app:layout_constraintHeight_percent=".5"
+                app:layout_constraintWidth_percent=".33333"
+                app:layout_constraintTop_toTopOf="@+id/postTwo"
+                app:layout_constraintStart_toEndOf="@id/postTwo"/>
+
+        <andrey.chernikovich.softteco.presentation.utils.custom.DoubleTextView
+                android:id="@+id/postFour"
+                android:layout_width="@dimen/zero"
+                android:layout_height="@dimen/zero"
+                app:layout_constraintHeight_percent=".5"
+                app:layout_constraintWidth_percent=".33333"
+                app:layout_constraintTop_toBottomOf="@+id/postOne"
+                app:layout_constraintStart_toStartOf="@+id/postOne"/>
+
+        <andrey.chernikovich.softteco.presentation.utils.custom.DoubleTextView
+                android:id="@+id/postFive"
+                android:layout_width="@dimen/zero"
+                android:layout_height="@dimen/zero"
+                app:layout_constraintHeight_percent=".5"
+                app:layout_constraintWidth_percent=".33333"
+                app:layout_constraintTop_toBottomOf="@+id/postTwo"
+                app:layout_constraintStart_toEndOf="@+id/postFour"/>
+
+        <andrey.chernikovich.softteco.presentation.utils.custom.DoubleTextView
+                android:id="@+id/postSix"
+                android:layout_width="@dimen/zero"
+                android:layout_height="@dimen/zero"
+                app:layout_constraintHeight_percent=".5"
+                app:layout_constraintWidth_percent=".33333"
+                app:layout_constraintStart_toEndOf="@+id/postFive"
+                app:layout_constraintTop_toBottomOf="@+id/postThree"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
