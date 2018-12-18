@@ -15,6 +15,7 @@
 
         <ImageView
                 android:id="@+id/imageViewAnimation"
+                android:src="@mipmap/ic_launcher_round"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/zero"
                 app:layout_constraintHeight_percent=".6"
@@ -44,6 +45,7 @@
         <ImageView
                 android:id="@+id/imageViewSave"
                 app:srcCompat="@drawable/ic_save"
+                visibility="@{viewModel.showButton}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
